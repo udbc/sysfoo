@@ -2,7 +2,7 @@
 
 test:
   override:
-    - mvn package
+    - mvn package1
 
   post:
     - mv target/*.war $CIRCLE_ARTIFACTS/
