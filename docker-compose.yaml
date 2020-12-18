@@ -1,0 +1,7 @@
+version: "3.7"
+
+services:
+  sysfoo:
+    image: himachallad/sysfoo:latest
+    ports: 
+      - 8888:8080
