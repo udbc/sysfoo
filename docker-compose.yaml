@@ -1,0 +1,7 @@
+version: "3.8"
+
+services:
+  sysfoo:
+    image: meetkjain83/sysfoo:v2
+    ports:
+      - 8875:8080
