@@ -1,0 +1,7 @@
+version: "3.8"
+
+services:
+  sysfoo:
+    image:  mikemcitrix/sysfoo:latest
+    ports:
+      - 9999:8080
