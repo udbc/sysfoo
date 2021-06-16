@@ -42,7 +42,7 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#about">School of Devops</a></li>
+								<li><a href="#about">School of Devops Viswa</a></li>
 							</ul>
 						</nav>
 					</header>
