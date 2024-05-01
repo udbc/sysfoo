@@ -1,0 +1,36 @@
+body { padding-top: 20px; }
+
+.container { max-width: 1200px; }
+
+.card {
+    margin-bottom: 20px;
+    width: 50%; /* Set the width of the cards to 50% */
+    margin-left: auto; /* Center the card */
+    margin-right: auto; /* Center the card */
+}
+
+h1 {
+    text-align: center; /* Centers the text of all <h1> elements */
+}
+
+
+.connected { background-color: green; color: white; padding: 10px; }
+.disconnected { background-color: red; color: white; padding: 10px; }
+
+/* Base styles for larger screens can be defined above */
+
+/* Responsive styles for screens less than 768px wide */
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .container {
+        padding: 10px; /* Adjust container padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 24px; /* Smaller font size for small devices */
+    }
+}
+
