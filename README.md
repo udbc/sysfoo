@@ -92,7 +92,9 @@ This application usesa embded, in memory database called H2 by default. To use P
 
 ### Configuration Steps
 
-  * Configure Application Properties - Option 1 
+Use the following steps to activate the PostgreSQL profile. 
+
+#### Configure Application Properties - Option 1 
 
 Modify the application-prod.properties file in your project to include the PostgreSQL database connection settings:
 
@@ -114,7 +116,7 @@ spring.jpa.hibernate.ddl-auto=update
 Replace localhost, sysfoo, postgres, and your_password with your actual database host, database name, username, and password.
 
 
-  * Configure Application Properties - Option 2 : 
+#### Configure Application Properties - Option 2 : 
 
 Instead of updating it in the application-prod.properties, you could directly set these from environment as: 
 
@@ -127,7 +129,7 @@ export SPRING_DATASOURCE_PASSWORD=postgres
 Replace db (hostname), postgres(user) and postgres(password) with the actual values. 
  
 
-  * Set Active Profile
+#### Set Active Profile
 
 To activate the PostgreSQL configuration, set the SPRING_PROFILES_ACTIVE environment variable to prod when starting your application. This can be done in your docker-compose.yml or through your IDE or terminal:
 
