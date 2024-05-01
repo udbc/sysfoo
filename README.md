@@ -80,6 +80,61 @@ Following is how the front page looks like
 
 ![Sysfoo Web](./sysfoo-web.png)
 
+
+
+## Switching to PostgreSQL Database
+
+This application usesa embded, in memory database called H2 by default. To use PostgreSQL as the database for the Sysfoo application, you need to configure both the application properties and set up the environment appropriately. Here’s how you can switch from the default H2 database to PostgreSQL.
+
+### Prerequisites
+
+- PostgreSQL installed on your development machine or access to a PostgreSQL server.
+
+### Configuration Steps
+
+  * Configure Application Properties - Option 1 
+
+Modify the application-prod.properties file in your project to include the PostgreSQL database connection settings:
+
+e.g. 
+
+```
+# DataSource configuration for PostgreSQL
+spring.datasource.url=jdbc:postgresql://localhost:5432/sysfoo
+spring.datasource.username=postgres
+spring.datasource.password=your_password
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# Hibernate properties
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+
+```
+
+Replace localhost, sysfoo, postgres, and your_password with your actual database host, database name, username, and password.
+
+
+  * Configure Application Properties - Option 2 : 
+
+Instead of updating it in the application-prod.properties, you could directly set these from environment as: 
+
+```
+export SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/sysfoo
+export SPRING_DATASOURCE_USERNAME=postgres
+export SPRING_DATASOURCE_PASSWORD=postgres
+```
+
+Replace db (hostname), postgres(user) and postgres(password) with the actual values. 
+ 
+
+  * Set Active Profile
+
+To activate the PostgreSQL configuration, set the SPRING_PROFILES_ACTIVE environment variable to prod when starting your application. This can be done in your docker-compose.yml or through your IDE or terminal:
+
+```
+export SPRING_PROFILES_ACTIVE=prod
+```
+
 ## Development with the Application
 
 When developing with the Sysfoo application, consider the following tips:
