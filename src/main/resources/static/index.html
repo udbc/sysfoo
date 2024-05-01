@@ -26,6 +26,12 @@
                 <p class="card-text" id="app-version">Loading...</p>
             </div>
         </div>
+	<div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Database Information</h5>
+                <p class="card-text" id="database-info">Loading database status...</p>
+            </div>
+        </div>
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Add To-Do Item</h5>
@@ -58,6 +64,18 @@
                 });
             }
             fetchSystemInfo();
+
+            function fetchDatabaseInfo() {
+                $.get('/database-info', function(data) {
+                    var dbInfoHtml = 'Status: ' + data.status + '<br>' +
+                         'Database Type: ' + data.databaseType;
+                $('#database-info').html(dbInfoHtml);
+                }).fail(function() {
+                    $('#database-info').text('Failed to load database information.');
+                });
+            }
+            fetchDatabaseInfo();
+
 
             // Handle to-do form submission
             $('#todo-form').submit(function(event) {

@@ -35,4 +35,9 @@ public class SystemInfoController {
     public ResponseEntity<String> getVersion() {
         return ResponseEntity.ok(appVersion); // Returns the app version
     }
+
+    @GetMapping("/database-info")
+    public Map<String, String> getDatabaseInfo() {
+        return systemInfoService.getDatabaseInfo();
+    }
 }
