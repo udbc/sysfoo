@@ -9,6 +9,8 @@
         body { padding-top: 20px; }
         .container { max-width: 1200px; }
         .card { margin-bottom: 20px; }
+        .connected { background-color: green; color: white; padding: 10px; }
+        .disconnected { background-color: red; color: white; padding: 10px; }
     </style>
 </head>
 <body>
@@ -66,16 +68,27 @@
             fetchSystemInfo();
 
             function fetchDatabaseInfo() {
-                $.get('/database-info', function(data) {
-                    var dbInfoHtml = 'Status: ' + data.status + '<br>' +
+               $.get('/database-info', function(data) {
+                   var dbInfo = $('#database-info');
+                   var dbInfoHtml = 'Status: ' + data.status + '<br>' +
                          'Database Type: ' + data.databaseType;
-                $('#database-info').html(dbInfoHtml);
-                }).fail(function() {
-                    $('#database-info').text('Failed to load database information.');
-                });
-            }
-            fetchDatabaseInfo();
+               dbInfo.html(dbInfoHtml);
 
+               // Remove any previous status classes
+               dbInfo.removeClass('connected disconnected');
+
+               // Add the appropriate class based on the status
+               if (data.status === "Connected") {
+                 dbInfo.addClass('connected');
+               } else {
+                 dbInfo.addClass('disconnected');
+               }
+               }).fail(function() {
+                  $('#database-info').text('Failed to load database information.');
+                  $('#database-info').addClass('disconnected'); // Assume disconnected on fail
+               });
+            }
+            fetchDatabaseInfo()
 
             // Handle to-do form submission
             $('#todo-form').submit(function(event) {
