@@ -41,11 +41,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		    <dependency>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-starter-test</artifactId>
-                        <scope>test</scope>
-                    </dependency>
 	        <dependency>
                         <groupId>org.hibernate.orm</groupId>
                         <artifactId>hibernate-core</artifactId>
@@ -77,10 +72,6 @@
                                <target>17</target>
                             </configuration>
                        </plugin>
-                       <plugin>
-                            <groupId>org.springframework.boot</groupId>
-                            <artifactId>spring-boot-maven-plugin</artifactId>
-	               </plugin>
                 </plugins>
         </build>
 
