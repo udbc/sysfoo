@@ -30,7 +30,7 @@ To build and run the Sysfoo application, follow these steps:
    cd sysfoo
 ```
 
-2. **Build the Application**
+2. **Compile/Build the Application**
 
 Use Maven to build the application:
 
@@ -39,7 +39,23 @@ Use Maven to build the application:
 ```
 This command compiles the application and runs any unit tests.
 
-3. **Run the Application**
+3. **Run Unit Tests**
+
+To launch automated unit tests: 
+
+```
+mvn clean test 
+```
+
+4. **Package the Application**
+
+To package this app and to generate an artifact: 
+
+```
+mvn package -DskipTests
+```
+
+5. **Launch the Application**
 
 Once the build is successful, you can run the application:
 
