@@ -47,15 +47,6 @@
                         <version>6.1.2.Final</version> <!-- Check for the latest compatible version -->
                 </dependency>
 	</dependencies>
-        <dependencyManagement>
-            <dependencies>
-                <dependency>
-                       <groupId>org.hibernate</groupId>
-                       <artifactId>hibernate-core</artifactId>
-                       <version>6.1.2.Final</version> <!-- This should match the version used in your dependencies -->
-                </dependency>
-           </dependencies>
-        </dependencyManagement>
 
 	<build>
 		<plugins>
