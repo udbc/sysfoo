@@ -11,6 +11,18 @@ This application is ideal for individuals learning about Spring Boot, RESTful se
 
 ![Sysfoo Architecture](./docs/h2.jpg)
 
+As part of devops learning you could take this app and
+
+  * Containerize it by writing a Dockerfile 
+  * Setup a dev environment with Docker Compose 
+  * Build a CI Pipeline with Jenkins, Docker, Git 
+  * Deploy using Kubernetes 
+  * Setup Automated Devployments with ArgoCD 
+  * Setup DevSecOps workflows 
+  * Deploy it on Cloud and automate that with Terraform 
+
+These are just a few ideas you could try and then build so much on top of this. 
+
 ## Building the Application
 
 To build and run the Sysfoo application, follow these steps:
