@@ -88,7 +88,7 @@ Following is how the front page looks like
 
 This application usesa embded, in memory database called H2 by default. To use PostgreSQL as the database for the Sysfoo application, you need to configure both the application properties and set up the environment appropriately. Here’s how you can switch from the default H2 database to PostgreSQL.
 
-![Sysfoo Architecture](./docs/h2.jpg)
+![Sysfoo Architecture](./docs/not_h2.jpg)
 ![Sysfoo Architecture with Postgres](./docs/postgres.jpg)
 
 ### Prerequisites
